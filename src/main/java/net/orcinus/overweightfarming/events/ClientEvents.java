@@ -90,10 +90,7 @@ public class ClientEvents {
         }
         if (tabKey == CreativeModeTabs.FOOD_AND_DRINKS) {
             for (RegistryObject<Block> block : OFBlocks.BLOCKS.getEntries()) {
-                if (OFBlocks.COMPAT.containsKey(block) && !OFBlocks.COMPAT.containsValue(OverweightFarming.MODID)) {
-                    if (!ModList.get().isLoaded(OFBlocks.COMPAT.get(block))) {
-                        continue;
-                    }
+                if (OFBlocks.COMPAT.containsKey(block) && ModList.get().isLoaded(OFBlocks.COMPAT.get(block))) {
                     put(entries, block.get());
                 }
             }
