@@ -20,23 +20,24 @@
     "peel_overweight_onion": {
       "trigger": "minecraft:item_used_on_block",
       "conditions": {
-        "location": {
-          "block": {
-            "blocks": [
-              "overweight_farming:overweight_onion_block"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "overweight_farming:overweight_onion_block"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "tag": "minecraft:axes"
+            }
           }
-        },
-        "item": {
-          "items": [
-            "minecraft:wooden_axe",
-            "minecraft:golden_axe",
-            "minecraft:stone_axe",
-            "minecraft:iron_axe",
-            "minecraft:diamond_axe",
-            "minecraft:netherite_axe"
-          ]
-        }
+        ]
       }
     }
   },
